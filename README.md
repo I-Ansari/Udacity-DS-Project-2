@@ -14,10 +14,22 @@
 
 ## Questions
 
-How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
+1) How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
 
 Changing SparkSession property parameters had a very significant affect onthe parameters inputRowsPerSecond and processedRowsPerSecond
 
-What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
+2) What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
 
 I have found increasing maxOfffsetPerTrigger and maxRatePerPartition results in significantly increasing inputRowsPerSecond and processedRowsPerSecond.
+
+a) At maxOfffsetPerTrigger = 200 and maxRatePerPartition = 200
+
+![image](https://user-images.githubusercontent.com/14344723/84573341-f71ddc00-adb0-11ea-8818-b619a5255e30.png)
+
+b) At maxOfffsetPerTrigger = 1000 and maxRatePerPartition = 500
+
+![image](https://user-images.githubusercontent.com/14344723/84573431-6eec0680-adb1-11ea-84d6-fbbab92a5eb7.png)    
+
+
+
+
